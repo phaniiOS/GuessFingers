@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         let a = UserInput.text
         var bFlag = false
         for i in (a?.unicodeScalars)!{
-            if !(i.value > 48 || i.value < 57 || i.value == 45 || i.value == 43){//48-57 are 0-9 and 45 is -, 43 is +
+            if !((i.value > 48 && i.value < 57) || i.value == 45 || i.value == 43){//48-57 are 0-9 and 45 is -, 43 is +
                 let alert = UIAlertController(title: "Error in Input", message: "Input should only contain numbers", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
